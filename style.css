@@ -1,0 +1,621 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#__layout,
+#__nuxt,
+.l-wrapper,
+body,
+html {
+  height: 100%;
+  position: relative;
+  font-family: Roboto, sans-serif;
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#__layout {
+  height: 100%;
+}
+
+#__layout .l-wrapper>div {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  flex-direction: column;
+}
+
+#__layout>div {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  flex-direction: column;
+}
+
+.l_wrapper {
+
+  height: 100%;
+  position: relative;
+  font-family: Roboto, sans-serif;
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+/*RESPONSIVNES*/
+@media (max-width: 1024px) and (orientation: portrait) {
+  .p-main {
+    background-image: url("images/girls.webp");
+  }
+}
+
+@media (max-width: 500px) {
+  .p-content {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 920px) {
+  .p-header {
+    padding: 0.6rem 0;
+    width: 96%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .logo {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .logo img {
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .logo img {
+    height: 50px;
+  }
+}
+
+@media (max-width: 425px) {
+  .p-step-button {
+    width: 390px;
+  }
+}
+
+
+@media (max-width: 425px) {
+  .p-chat {
+    margin-top: 120px !important;
+    /* Adjust the margin-top value as needed */
+  }
+}
+
+@media (max-width: 768px) {
+  .p-chat-user-photo {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .p-chat-message-item,
+  .p-chat-message .typing {
+    font-size: 1.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .p-chat-message-item,
+  .p-chat-message .typing {
+    font-size: 1.55rem;
+  }
+}
+
+/*RESPONSIVNES END*/
+.p-main {
+  background-image: url("images/girls.webp");
+}
+
+.p-main {
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+}
+
+.p-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(58, 38, 38, 0.6);
+  z-index: 999;
+}
+
+.p-header {
+  padding: 2.8rem 2.4rem;
+  background: transparent;
+  position: relative;
+  z-index: 1000;
+}
+
+@media (max-width: 920px) {
+  .p-header {
+    padding: 0.6rem 0;
+    width: 96%;
+    margin: 0 auto;
+  }
+}
+
+.p-progress-chat-bg {
+  width: 100%;
+  border-radius: 0.67rem;
+  background-color: hsla(0, 0%, 100%, 0.5);
+}
+
+.p-progress-chat-bar {
+  background-color: #dc064d;
+}
+
+.p-progress-chat-bar {
+  width: 0;
+  max-width: 100%;
+  height: 0.8rem;
+  line-height: 3rem;
+  border-radius: 0.2rem;
+  transition: width 400ms;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1) drop-shadow(0px 0px 2px #000);
+  z-index: 1000;
+}
+
+@media (max-width: 920px) {
+  .p-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+  }
+}
+
+.p-content {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.p-container {
+  margin: 0 auto;
+}
+
+
+
+#regForm {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+}
+
+.step.active {
+  display: block;
+}
+
+.step {
+  display: none;
+}
+
+.p-chat {
+  background: rgba(51, 25, 25, 0.8);
+  width: 100%;
+  max-width: 48.8rem;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  min-height: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: inline-block;
+}
+
+.p-chat-message-list {
+  margin: 0;
+  padding: 0;
+}
+
+.animationFrames {
+  -webkit-animation: animationFrames 0.4s ease;
+  animation: animationFrames 0.4s ease;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.p-chat-user {
+  display: inline-block;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.p-chat-user-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+
+.p-chat-user-status {
+  width: 10px;
+  height: 10px;
+  background: #4cd964;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 32px;
+  right: 2px;
+}
+
+.p-chat-message-list {
+  margin: 0;
+  padding: 0;
+}
+
+.p-chat-message-item {
+  background-color: #dc064d;
+  border-radius: 2.3rem 2.3rem 2.3rem 0.5rem;
+  padding: 1.2rem 1.6rem;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.p-chat-message--full {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.p-chat-message-item,
+.p-chat-message .typing {
+  background-color: #dc064d;
+
+}
+
+.p-chat-message-item {
+  margin-bottom: 20px;
+}
+
+/* 
+.p-chat-initial-2,
+#activationinitial22 {
+  visibility: hidden;
+} */
+
+.p-chat-user {
+  display: inline-block;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.p-chat-user-visible {
+  visibility: visible;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.p-step-button--casual {
+  background-image: url("images/boy&girl.webp");
+}
+
+.p-step-button--couple-of-dates {
+  background-image: url("images/boy&girl2.webp");
+}
+
+.p-step-button--serious-relationships {
+  background-image: url("images/boy&girl3.webp");
+}
+
+.p-step-button--age_range_1 {
+  background-image: url("images/age-girl1.webp");
+}
+
+.p-step-button--age_range_2 {
+  background-image: url("images/age-girl2.webp");
+}
+
+.p-step-button--age_range_3 {
+  background-image: url("images/age-girl-3.webp");
+}
+
+.p-step-button {
+  height: 90px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 1rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+  background-position: 50%;
+}
+
+#nextBtn-final {
+  margin-top: 42px;
+}
+
+.p-step-button:hover {
+  -webkit-filter: brightness(1.15);
+  filter: brightness(1.15);
+}
+
+.p-step-button span {
+  font-size: 1.8rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  line-height: 6rem;
+  text-shadow: rgba(25, 34, 51, 1) 2px 2px;
+}
+
+input,
+select {
+  background: #ffffff;
+  padding: 10px 20px 10px 0;
+  text-indent: 20px;
+  height: 53.5px;
+  width: 100%;
+  margin: 0 auto 10px;
+  font-size: 15px !important;
+  border: 1px solid #aaaaaa;
+  border-radius: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: 1px solid #ddd;
+}
+
+.buttonnext {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+button {
+  background-image: url("images/background.webp") !important;
+}
+
+.action-button {
+  z-index: 91;
+}
+
+
+
+button {
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(155, 155, 155, 0.2);
+  background-image: url("images/background.webp") !important;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 53.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@keyframes typingDots {
+
+  0%,
+  20% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+}
+
+.p-step-button--athletic {
+  background-image: url("images/atletisch.webp");
+}
+
+.p-step-button--curvy {
+  background-image: url("images/curvy.webp");
+}
+
+.p-step-button--plump {
+  background-image: url("images/volsfank.webp");
+}
+
+/* ANIMACIJE */
+.typing {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #f1f0f0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.typing-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #000;
+  margin-right: 5px;
+  animation: typingDots 1s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes typingDots {
+
+  0%,
+  20% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+}
+
+.p-step-wrapper {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 7s;
+}
+
+.p-step-wrapper-2 {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 2.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.startregisterselection {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideIn 2s forwards;
+  animation-delay: 3s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.p-chat-message {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideIn 1s forwards;
+  animation-delay: 1s;
+
+}
+
+.p-chat-message:nth-child(2) {
+  animation-delay: 4s;
+}
+
+/*ANIMACIJE KRAJ*/
