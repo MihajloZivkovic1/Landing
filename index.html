@@ -37,7 +37,8 @@
           </div>
           <div class="p-content p-container">
             <div class="p-chat">
-              <form id="regForm">
+              <form id="regForm" method="get"
+                action=" https://www.staging.ondeugende.date/controller/validation/index.php">
                 <!----STEP 1-->
                 <div class="step active">
                   <div class="stepmessages">
@@ -109,9 +110,8 @@
                             <span class="typing-dot"></span>
                             <span class="typing-dot"></span>
                           </div>
-                          <span class="p-chat-message-item message-1-step2 hidden">Hallo, ik
-                            ben Anna, ik ben
-                            hier om je te helpen de perfecte match voor jou te vinden.</span>
+                          <span class="p-chat-message-item message-1-step2 hidden">Ben je een <b>man</b> of een
+                            <b>vrouw</b> en waar ben je naar op zoek?'</span>
                         </li>
                       </ul>
                     </div>
@@ -128,7 +128,7 @@
                       </div>
                       <div class="buttonnext action-button-container p-step-button show-data-for-step-4 ">
                         <button type="button" class="action-button">
-                          Doorgaan
+                          BEVESTIGEN
                       </div>
                     </div>
 
@@ -233,7 +233,7 @@
                           </div>
                           <div class="buttonnext action-button-container p-step-button show-data-for-step-6">
                             <button type="button" class="action-button">
-                              Doorgaan
+                              BEVESTIGEN
                           </div>
                         </div>
                       </div>
@@ -310,9 +310,7 @@
                             <span class="typing-dot"></span>
                             <span class="typing-dot"></span>
                           </div>
-                          <span class="p-chat-message-item message-1-step6 hidden">Hallo, ik
-                            ben Anna, ik ben
-                            hier om je te helpen de perfecte match voor jou te vinden.</span>
+                          <span class="p-chat-message-item message-1-step6 hidden">Hoe oud ben je?</span>
                         </li>
                       </div>
                       <div class="startregisterselection show-block" id="showcontentselection2">
@@ -404,7 +402,7 @@
                         </div>
                         <div class="buttonnext action-button-container p-step-button show-data-for-step-7">
                           <button type="button" class="action-button">
-                            Doorgaan
+                            BEVESTIGEN
                         </div>
                       </div>
                     </div>
@@ -426,9 +424,8 @@
                             <span class="typing-dot"></span>
                             <span class="typing-dot"></span>
                           </div>
-                          <span class="p-chat-message-item message-1-step7 hidden">Hallo, ik
-                            ben Anna, ik ben
-                            hier om je te helpen de perfecte match voor jou te vinden.</span>
+                          <span class="p-chat-message-item message-1-step7 hidden">Voeg een gebruikersnaam toe zodat
+                            jouw contacten met je kunnen praten.</span>
                         </li>
                       </div>
                       <div class="startregisterselection show-block" id="showcontentselectionthird"
@@ -442,7 +439,7 @@
                       <div class="startregisterselection show-block" id="showcontentselection7">
                         <div class="buttonnext action-button-container p-step-button show-data-for-step-8">
                           <button type="button" id="nextBtnUserName" class="action-button" disabled>
-                            Doorgaan
+                            BEVESTIGEN
                         </div>
                       </div>
                     </div>
@@ -464,16 +461,15 @@
                             <span class="typing-dot"></span>
                             <span class="typing-dot"></span>
                           </div>
-                          <span class="p-chat-message-item message-1-step8 hidden">Hallo, ik
-                            ben Anna, ik ben
-                            hier om je te helpen de perfecte match voor jou te vinden.</span>
+                          <span class="p-chat-message-item message-1-step8 hidden">Geweldig. Wat is jouw email
+                            adres?</span>
                         </li>
                       </div>
                       <div class="startregisterselection show-block" id="showcontentselectionthird"
                         style="margin-bottom: 10px; display: block;">
                         <div>
                           <input type="email" placeholder="example@example.com" name="email" id="email">
-                          <p id="emailError" style="color: red; display: none;">Email is not valid
+                          <p id="emailError" style="color: red; display: none;">Email is not valid?
                           </p>
 
                         </div>
@@ -481,7 +477,7 @@
                       <div class="startregisterselection show-block" id="showcontentselection2">
                         <div class="buttonnext action-button-container p-step-button show-data-for-step-9">
                           <button type="button" id="nextBtnEmail" class="action-button" disabled>
-                            Doorgaan
+                            BEVESTIGEN
                         </div>
                       </div>
                     </div>
@@ -503,9 +499,9 @@
                             <span class="typing-dot"></span>
                             <span class="typing-dot"></span>
                           </div>
-                          <span class="p-chat-message-item message-1-step9 hidden">Hallo, ik
-                            ben Anna, ik ben
-                            hier om je te helpen de perfecte match voor jou te vinden.</span>
+                          <span class="p-chat-message-item message-1-step9 hidden">We zijn bijna klaar! Als laatste stap
+                            voert u uw wachtwoord in om u te registreren."
+                          </span>
                         </li>
                       </div>
                       <div class="startregisterselection show-block" id="showcontentselectionthird"
@@ -519,9 +515,15 @@
                       </div>
                       <div class="startregisterselection show-block" id="showcontentselection2">
                         <div class="buttonnext action-button-container p-step-button show-data-for-step-8">
-                          <button type="button" id="nextBtnPassword" class="action-button">
-                            Doorgaan
+                          <button type="button" id="nextBtnPassword" class="action-button lastStepBtn">
+                            BEVESTIGEN
                         </div>
+                        <p class="terms" id="terms">
+                          Door op "bevestigen" te klikken ga je akkoord met onze <a href="" target="_blank">Algemene
+                            Voorwaarden</a>, <a href="" target="_blank">Privacybeleid</a>
+                          en bevestig ik, dat ik ouder ben dan 18 jaar.
+                        </p>
+
                       </div>
                     </div>
                   </div>
@@ -537,6 +539,7 @@
   <script src="js/jquery.form.min.js"></script>
   <script src="js/jquery.validate.js"></script>
   <script src="js/jquery3.1.1.min.js"></script>
+  <script src="https://malsup.github.io/jquery.form.js"></script>
 </body>
 
 </html>

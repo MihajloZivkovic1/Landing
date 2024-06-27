@@ -14,6 +14,17 @@ $(document).ready(function () {
     $('#bar').css('width', progress + '%');
   });
 
+  $('.lastStepBtn').on('click', function () {
+    $("#regForm").ajaxSubmit({
+      dataType: 'json',
+      success: processJson,
+      error: function () {
+        $('.action-button-loading').hide();
+        $('.error').html('<p style="padding: 24px;color: white; text-align: center;"> Something went wrong. Please try again. </p>');
+      }
+    });
+  })
+
 
   $('.show-data div').on('click', () => {
     showChatStepTwo()
@@ -47,38 +58,86 @@ $(document).ready(function () {
 
   const usernameField = document.querySelector('#uname');
   const nextBtnName = document.querySelector("#nextBtnUserName");
+  const emailField = document.querySelector('#email');
 
   usernameField.addEventListener("keyup", function () {
+    console.log(this.value);
+
     if (this.value.length < 5) {
-      console.log("ovde sam");
-      this.setCustomValidity("Username should be at least 5 characters long");
+
+      this.setCustomValidity("De gebruikersnaam moet minimaal 5 tekens lang zijn.");
       this.reportValidity();
       nextBtnName.disabled = true;
     } else {
       this.setCustomValidity("");
       nextBtnName.disabled = false;
+
+      fetch(`https://www.staging.ondeugende.date/controller/validation/index.php?addr=12345432sdfhkjhsjdggt3234pl,kjhsgsff&username=${usernameField.value}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === true) {
+            console.log(data)
+            this.setCustomValidity("")
+            nextBtnName.disabled = false;
+          }
+          else {
+            console.log(data);
+            this.setCustomValidity(data.message);
+            this.reportValidity();
+            nextBtnName.disabled = true;
+          }
+        })
+        .catch((error) => {
+          console.error('Error:' + error);
+        })
     }
   });
 
-  document.getElementById('email').addEventListener('keyup', function () {
+  emailField.addEventListener('keyup', function () {
     var email = document.getElementById('email').value;
     var nextBtn = document.getElementById('nextBtnEmail');
 
     if (!validateEmail(email)) {
       console.log("ovde sam");
-      this.setCustomValidity("Email is not valid");
+      this.setCustomValidity("De e-mail is niet geldig");
       this.reportValidity();
       nextBtn.disabled = true;
     }
     else {
       this.setCustomValidity("");
       nextBtn.disabled = false;
-    }
+
+      fetch(`https://www.staging.ondeugende.date/controller/validation/index.php?addr=12345432sdfhkjhsjdggt3234pl,kjhsgsff&email=${emailField.value}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === true) {
+            console.log(data);
+            this.setCustomValidity("");
+            this.reportValidity();
+            nextBtn.disable = false;
+          }
+          else {
+            console.log(data);
+            this.setCustomValidity(data.message)
+            this.reportValidity();
+            nextBtn.disable = true;
+          }
+        })
+    };
   })
-
-
-});
-
+})
 // function showNextStep(typing, message, user, typing2, message2, user2) {
 
 //   setTimeout(function () {
@@ -277,4 +336,13 @@ function validateEmail(email) {
   return re.test(email);
 }
 
-
+function processJson(response) {
+  if (!response.status) {
+    alert('fail')
+  } else {
+    alert('success')
+    setTimeout(function () {
+      window.location.href = '/';
+    }, 10000);
+  }
+}

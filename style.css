@@ -513,6 +513,11 @@ button {
   background-image: url("images/volsfank.webp");
 }
 
+.terms {
+  text-align: center;
+  font-size: 18px;
+}
+
 /* ANIMACIJE */
 .typing {
   display: inline-block;
