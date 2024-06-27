@@ -25,7 +25,6 @@ $(document).ready(function () {
     });
   })
 
-
   $('.show-data div').on('click', () => {
     const typingElement = document.querySelector('.typing-1-step2');
     const messageElement = document.querySelector('.message-1-step2');
