@@ -27,33 +27,58 @@ $(document).ready(function () {
 
 
   $('.show-data div').on('click', () => {
-    showChatStepTwo()
+    const typingElement = document.querySelector('.typing-1-step2');
+    const messageElement = document.querySelector('.message-1-step2');
+    const userPhotoElement = document.querySelector('.user-photo-step2');
+
+    showNextSteps(typingElement, messageElement, userPhotoElement);
   })
 
   $('.show-data-for-step-4').on('click', () => {
-    console.log("usao sam u 4 korak");
-    showChatStepFour()
+    const typingElement = document.querySelector('.typing-1-step4');
+    const messageElement = document.querySelector('.message-1-step4');
+    const userPhotoElement = document.querySelector('.user-photo-step4');
+
+    showNextSteps(typingElement, messageElement, userPhotoElement);
   })
 
   $('.show-data-for-step-5').on('click', () => {
-    console.log("usao sam u ovu funk");
-    showChatStepSix()
+    const typingElement = document.querySelector('.typing-1-step6');
+    const messageElement = document.querySelector('.message-1-step6');
+    const userElement = document.querySelector('.p-chat-user-step6');
+    showNextSteps(typingElement, messageElement, userElement)
   })
+
   $('.show-data-for-step-6').on('click', () => {
-    console.log("usao sam u ovu funk");
-    showChatStepSix();
+    const typingElement = document.querySelector('.typing-1-step6');
+    const messageElement = document.querySelector('.message-1-step6');
+    const userElement = document.querySelector('.p-chat-user-step6');
+
+    showNextSteps(typingElement, messageElement, userElement);
   })
   $('.show-data-for-step-7').on('click', () => {
-    showChatStepSeven()
+    const typingElement = document.querySelector('.typing-1-step7');
+    const messageElement = document.querySelector('.message-1-step7');
+    const userElement = document.querySelector('.p-chat-user-step7');
+
+    showNextSteps(typingElement, messageElement, userElement);
   })
 
   $('.show-data-for-step-8').on('click', () => {
-    showChatStepEight()
+    const typingElement = document.querySelector('.typing-1-step8');
+    const messageElement = document.querySelector('.message-1-step8');
+    const userElement = document.querySelector('.p-chat-user-step8');
+
+    showNextSteps(typingElement, messageElement, userElement);
 
   })
 
   $('.show-data-for-step-9').on('click', () => {
-    showChatStepNine();
+    const typingElement = document.querySelector('.typing-1-step9');
+    const messageElement = document.querySelector('.message-1-step9');
+    const userElement = document.querySelector('.p-chat-user-step9');
+
+    showNextSteps(typingElement, messageElement, userElement);
   })
 
   const usernameField = document.querySelector('#uname');
@@ -164,6 +189,17 @@ $(document).ready(function () {
 //   }, 6000);
 // }
 
+function showNextSteps(typing, message, user) {
+
+  typing.classList.remove('hidden');
+
+  setTimeout(() => {
+    typing.classList.add('hidden');
+    message.classList.remove('hidden');
+    user.classList.remove('invisible');
+  }, 3000);
+}
+
 
 const showChat = () => {
   document.querySelector('.typing-1').classList.add('hidden');
@@ -198,138 +234,6 @@ const showChat = () => {
   }, 6000);
 }
 
-
-const showChatStepTwo = () => {
-  console.log("ovde sam");
-  const typingElement = document.querySelector('.typing-1-step2');
-  const messageElement = document.querySelector('.message-1-step2');
-  const userPhotoElement = document.querySelector('.user-photo-step2');
-
-  // Show the typing animation
-  typingElement.classList.remove('hidden');
-
-  // After 3 seconds, hide the typing animation and show the chat message and user photo
-  setTimeout(() => {
-    typingElement.classList.add('hidden');
-    messageElement.classList.remove('hidden');
-    userPhotoElement.classList.remove('invisible');
-  }, 3000);
-}
-
-const showChatStepFour = () => {
-  const typingElement = document.querySelector('.typing-1-step4');
-  const messageElement = document.querySelector('.message-1-step4');
-  const userPhotoElement = document.querySelector('.user-photo-step4');
-
-  typingElement.classList.remove('hidden');
-
-  setTimeout(() => {
-    typingElement.classList.add('hidden');
-    messageElement.classList.remove('hidden');
-    userPhotoElement.classList.remove('invisible');
-  }, 3000);
-
-}
-
-const showChatStepFive = () => {
-  console.log("dasdsad");
-  document.querySelector('.typing-1-step5').classList.add('hidden');
-  document.querySelector('.p-chat-user-1-step5').classList.add('invisible');
-  document.querySelector('.message-1-step5').classList.add('hidden');
-  document.querySelector('.typing-2-step5').classList.add('hidden');
-  document.querySelector('.p-chat-user-2-step5').classList.add('hidden');
-  document.querySelector('.message-2-step5').classList.add('hidden');
-  document.querySelector('.typing-1-step5').classList.remove('hidden');
-
-  setTimeout(function () {
-    document.querySelector('.typing-1-step5').classList.add('hidden');
-    document.querySelector('.message-1-step5').classList.remove('hidden');
-    document.querySelector('.p-chat-user-1-step5').classList.remove('invisible');
-    setTimeout(function () {
-      document.querySelector('.message-1-step5').classList.add('visible');
-    }, 10);
-  }, 3500);
-
-  setTimeout(function () {
-    document.querySelector('.typing-2-step5').classList.remove('hidden');
-  }, 4500);
-
-  setTimeout(function () {
-    document.querySelector('.typing-2-step5').classList.add('hidden');
-    document.querySelector('.message-2-step5').classList.remove('hidden');
-    document.querySelector('.p-chat-user-1-step5').classList.add('invisible');
-    document.querySelector('.p-chat-user-2-step5').classList.remove('hidden');
-    setTimeout(function () {
-      document.querySelector('.message-2-step5').classList.add('visible');
-    }, 10);
-  }, 6000);
-}
-
-
-const showChatStepSix = () => {
-  console.log("dasda")
-  const typingElement = document.querySelector('.typing-1-step6');
-  const messageElement = document.querySelector('.message-1-step6');
-  const userElement = document.querySelector('.p-chat-user-step6');
-
-  typingElement.classList.remove('hidden');
-
-  setTimeout(() => {
-    typingElement.classList.add('hidden');
-    messageElement.classList.remove('hidden');
-    userElement.classList.remove('hidden');
-  }, 3000);
-
-}
-
-const showChatStepSeven = () => {
-  console.log("seven");
-  const typingElement = document.querySelector('.typing-1-step7');
-  const messageElement = document.querySelector('.message-1-step7');
-  const userElement = document.querySelector('.p-chat-user-step7');
-
-
-  typingElement.classList.remove('hidden');
-
-  setTimeout(() => {
-    typingElement.classList.add('hidden');
-    messageElement.classList.remove('hidden');
-    userElement.classList.remove('hidden');
-  }, 3000);
-
-}
-
-const showChatStepEight = () => {
-
-  const typingElement = document.querySelector('.typing-1-step8');
-  const messageElement = document.querySelector('.message-1-step8');
-  const userElement = document.querySelector('.p-chat-user-step8');
-
-
-  typingElement.classList.remove('hidden');
-
-  setTimeout(() => {
-    typingElement.classList.add('hidden');
-    messageElement.classList.remove('hidden');
-    userElement.classList.remove('hidden');
-  }, 3000);
-}
-
-const showChatStepNine = () => {
-
-  const typingElement = document.querySelector('.typing-1-step9');
-  const messageElement = document.querySelector('.message-1-step9');
-  const userElement = document.querySelector('.p-chat-user-step9');
-
-
-  typingElement.classList.remove('hidden');
-
-  setTimeout(() => {
-    typingElement.classList.add('hidden');
-    messageElement.classList.remove('hidden');
-    userElement.classList.remove('hidden');
-  }, 3000);
-}
 
 function validateEmail(email) {
   const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
