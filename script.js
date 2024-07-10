@@ -1,16 +1,22 @@
 $(document).ready(function () {
   showChat();
-  $('.p-step-button').on('click', function () {
 
+  $(document).ready(function () {
+    $('#bar').css('width', '0%');
+  });
+
+  $('.p-step-button').on('click', function () {
     var currentStep = $('.step.active');
     var nextStep = currentStep.next('.step');
+    var steps = document.querySelectorAll('div.step').length;
+
     currentStep.hide();
     currentStep.removeClass('active');
     nextStep.show();
     nextStep.addClass('active');
-    var steps = document.querySelectorAll('div.step').length;
 
-    var progress = ($('.step.active').index() + 1) * (100 / steps);
+    var currentIndex = currentStep.index();
+    var progress = (currentIndex + 1) * (100 / steps);
     $('#bar').css('width', progress + '%');
   });
 
@@ -196,13 +202,12 @@ function showNextSteps(typing, message, user) {
     typing.classList.add('hidden');
     message.classList.remove('hidden');
     user.classList.remove('invisible');
-  }, 3000);
+  }, 2000);
 }
 
 
 const showChat = () => {
   document.querySelector('.typing-1').classList.add('hidden');
-  // document.querySelector('.p-chat-user-1').classList.add('invisible');
   document.querySelector('.message-1').classList.add('hidden');
   document.querySelector('.typing-2').classList.add('hidden');
   document.querySelector('.p-chat-user-2').classList.add('hidden');
@@ -215,22 +220,24 @@ const showChat = () => {
     document.querySelector('.p-chat-user-1').classList.remove('invisible');
     setTimeout(function () {
       document.querySelector('.message-1').classList.add('visible');
-    }, 10);
-  }, 3500);
+    }, 20);
+  }, 1500);
 
   setTimeout(function () {
     document.querySelector('.typing-2').classList.remove('hidden');
-  }, 4500);
+    document.querySelector('.p-chat-user-2').classList.remove('hidden');
+    document.querySelector('.p-chat-user-1').classList.add('invisible');
+  }, 2000);
 
   setTimeout(function () {
+
     document.querySelector('.typing-2').classList.add('hidden');
     document.querySelector('.message-2').classList.remove('hidden');
     document.querySelector('.p-chat-user-1').classList.add('invisible');
-    document.querySelector('.p-chat-user-2').classList.remove('hidden');
     setTimeout(function () {
       document.querySelector('.message-2').classList.add('visible');
     }, 10);
-  }, 6000);
+  }, 3000);
 }
 
 

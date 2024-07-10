@@ -23,7 +23,7 @@ html {
 }
 
 #__layout .l-wrapper>div {
-  min-height: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -51,7 +51,6 @@ html {
 }
 
 .l_wrapper {
-
   height: 100%;
   position: relative;
   font-family: Roboto, sans-serif;
@@ -59,7 +58,6 @@ html {
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 /*RESPONSIVNES*/
@@ -83,15 +81,6 @@ html {
   }
 }
 
-@media only screen and (max-width: 500px) {
-  .logo {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10000;
-  }
-}
 
 @media only screen and (max-width: 500px) {
   .logo img {
@@ -99,11 +88,11 @@ html {
   }
 }
 
-@media only screen and (max-width: 425px) {
+/* @media only screen and (max-width: 425px) {
   .logo img {
     height: 50px;
   }
-}
+} */
 
 @media (max-width: 425px) {
   .p-step-button {
@@ -112,10 +101,15 @@ html {
 }
 
 
-@media (max-width: 425px) {
-  .p-chat {
-    margin-top: 120px !important;
-    /* Adjust the margin-top value as needed */
+@media(min-width:425px) {
+  .logo img {
+    margin-top: 50px;
+  }
+}
+
+@media(max-width:425px) {
+  .logo img {
+    margin-top: 50px;
   }
 }
 
@@ -141,6 +135,32 @@ html {
     font-size: 1.55rem;
   }
 }
+
+@media(max-height:632px) {
+  .p-main {
+    min-height: 800px;
+  }
+}
+
+@media (max-width:425px) {
+  .p-step-button .showcontent {
+    font-size: 14px;
+    /* Adjust this value as needed */
+  }
+}
+
+@media (max-width:380px) {
+  .logo img {
+    height: 50px !important;
+  }
+}
+
+@media (max-width:320px) {
+  .logo img {
+    height: 40px !important;
+  }
+}
+
 
 /*RESPONSIVNES END*/
 .p-main {
@@ -572,14 +592,14 @@ button {
 
 .p-step-wrapper {
   opacity: 0;
-  animation: fadeIn 1s forwards;
-  animation-delay: 7s;
+  animation: slideIn 1s forwards;
+  animation-delay: 3.5s;
 }
 
 .p-step-wrapper-2 {
   opacity: 0;
   animation: fadeIn 1s forwards;
-  animation-delay: 2.5s;
+  animation-delay: 5.5s;
 }
 
 @keyframes fadeIn {
@@ -595,8 +615,8 @@ button {
 .startregisterselection {
   opacity: 0;
   transform: translateY(50px);
-  animation: slideIn 2s forwards;
-  animation-delay: 3s;
+  animation: slideIn 1s forwards;
+  animation-delay: 2s;
 }
 
 @keyframes slideIn {
@@ -614,13 +634,16 @@ button {
 .p-chat-message {
   opacity: 0;
   transform: translateX(-50px);
-  animation: slideIn 1s forwards;
-  animation-delay: 1s;
-
+  animation: slideIn 0.5s forwards;
+  animation-delay: 0.5s;
 }
 
 .p-chat-message:nth-child(2) {
-  animation-delay: 4s;
+  animation-delay: 1s;
+}
+
+.p-chat-user {
+  animation: fadeIn 0.5s forwards;
 }
 
 /*ANIMACIJE KRAJ*/
